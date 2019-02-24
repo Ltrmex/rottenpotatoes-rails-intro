@@ -24,6 +24,7 @@ class MoviesController < ApplicationController
       @movies = Movie.where(rating: params[:ratings].keys)
     end
     else
+      params[:ratings] ? @movies = Movie.where(rating: params[:ratings].keys):
       @movies = Movie.all
     end
   end
